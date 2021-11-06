@@ -26,36 +26,44 @@ const useStyles = makeStyles({
 })
 
 const ProductComponent = () => {
-        const products = useSelector( state => state.productReducer.products)
-        const { id, title } =products[0]
-
         const classes = useStyles()
+        const products = useSelector( state => state.productReducer.products)
+        
+        const renderList = products.map((product) => {
+            const {id, title, category, price, image, description} = product
+            return (
+                <Card className={classes.root} key={id}>
+                    <CardActionArea>
+                        <CardMedia
+                            className={classes.media}
+                            image={image}
+                            title="Contemplative Reptile"
+                        />
+                        <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            {title}
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary" component="p">
+                            {description}
+                        </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                        <Button size="small" color="primary">
+                        Share
+                        </Button>
+                        <Button size="small" color="primary">
+                        Learn More
+                        </Button>
+                    </CardActions>
+                </Card>
+            )
+        })
+
     return (
-        <Card className={classes.root}>
-            <CardActionArea>
-                <CardMedia
-                className={classes.media}
-                image="/static/images/cards/contemplative-reptile.jpg"
-                title="Contemplative Reptile"
-                />
-                <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                    {title}
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                    {title}
-                </Typography>
-                </CardContent>
-            </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary">
-                Share
-                </Button>
-                <Button size="small" color="primary">
-                Learn More
-                </Button>
-            </CardActions>
-        </Card>
+        <div>
+            {renderList}
+        </div>
     )
 }
 
