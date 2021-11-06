@@ -12,7 +12,7 @@ export const setProducts = (products) => {
 }
 
 export const selectedProducts = (products) => {
-    return {
+    return { 
         type: SELECTED_PRODUCT,
         payload: products
     }
