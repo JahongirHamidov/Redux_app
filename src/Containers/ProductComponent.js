@@ -18,11 +18,13 @@ import {
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    maxWidth: 300,
+    
   },
   media: {
     height: 140,
   },
+  
 })
 
 const ProductComponent = () => {
@@ -50,10 +52,10 @@ const ProductComponent = () => {
                     </CardActionArea>
                     <CardActions>
                         <Button size="small" color="primary">
-                        Share
+                            Share
                         </Button>
                         <Button size="small" color="primary">
-                        Learn More
+                            Learn More
                         </Button>
                     </CardActions>
                 </Card>
@@ -61,9 +63,9 @@ const ProductComponent = () => {
         })
 
     return (
-        <div>
+        <>
             {renderList}
-        </div>
+        </>
     )
 }
 
