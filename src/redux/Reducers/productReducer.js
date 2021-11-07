@@ -2,7 +2,7 @@ import actionTypes from '../Constants/action-types'
 const {
     SET_PRODUCTS,
     SELECTED_PRODUCT,
-    //REMOVE_SELECTED_PRODUCT
+    REMOVE_SELECTED_PRODUCT
 } = actionTypes
 
 const initialState = {
@@ -23,5 +23,14 @@ export const selectedProductReducer = (state={}, type, payload) => {
             return { ...state, ...payload } 
         default:
             return state;
+    }
+}
+
+export const removeSelectedProductReducer = ( state={}, type, payload ) => {
+    switch (type) {
+        case REMOVE_SELECTED_PRODUCT:
+            return {...state}
+        default:
+            return state
     }
 }
