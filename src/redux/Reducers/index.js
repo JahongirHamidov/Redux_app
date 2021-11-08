@@ -1,15 +1,13 @@
 import {combineReducers} from 'redux'
 import { 
     productReducer, 
-    selectedProductReducer,
-    removeSelectedProductReducer
+    selectedProductReducer
 
 } from './productReducer'
 
 const reducers = combineReducers({
     productReducer,
-    product: selectedProductReducer,
-    removeSelectedProductReducer
+    product: selectedProductReducer
 
 })
 
